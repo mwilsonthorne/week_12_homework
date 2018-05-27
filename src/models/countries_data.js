@@ -4,14 +4,16 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const CountriesData = function () {
 
-
+this.countries = null;
 
 
 };
 
 CountriesData.prototype.getData = function () { //STEP 1
   const request = new Request('https://restcountries.eu/rest/v2/all');
+
   request.get((data) => {
+    this.countries = data;
     // console.log(data);
     // console.log('pop', this.randomCountry.population);
     PubSub.publish('CountryData:Country-loaded', data);
@@ -29,7 +31,7 @@ CountriesData.prototype.setUpListenerForUserChoice = function () { //STEP 9
   });
 
 CountriesData.prototype.findObjectAndPublish = function (index) { //STEP 11
-  countryObject = this.getData[index];
+  countryObject = this.countries[index];
   PubSub.publish('CountriesData:send-country', countryObject);
 
 };

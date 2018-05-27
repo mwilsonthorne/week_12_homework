@@ -19,7 +19,7 @@ CountryInfo.prototype.displayObject = function (object) { //STEP 16
   const infoContainer = document.querySelector('#country-population');
   infoContainer.innerHTML = '';
   const paragraph = document.createElement('p');
-  paragraph.textContent = 'hello';
+  paragraph.textContent = `The population of ${object.name} is ${object.population}`;
   infoContainer.appendChild(paragraph);
 };
 

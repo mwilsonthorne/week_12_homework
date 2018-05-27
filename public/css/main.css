@@ -1,0 +1,10 @@
+body {
+  font-family: Futura;
+  background-image: url('grand-central-centennial-100-years-celebration-crowds.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 10%;
+}
