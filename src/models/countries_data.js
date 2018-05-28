@@ -1,12 +1,11 @@
 const Request = require('../helpers/request.js');
 const PubSub = require('../helpers/pub_sub.js');
 
-
 const CountriesData = function () {
 
+  //this.currencies = [cny, yen, bam, etc];
+
 this.countries = null;
-
-
 };
 
 CountriesData.prototype.getData = function () { //STEP 1
@@ -17,7 +16,6 @@ CountriesData.prototype.getData = function () { //STEP 1
     // console.log(data);
     // console.log('pop', this.randomCountry.population);
     PubSub.publish('CountryData:Country-loaded', data);
-
   });
 
 };
